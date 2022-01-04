@@ -8,24 +8,20 @@ public class NewtourTest extends ObjInitialize {
 	public static void main(String[] args) {
 
 		String url = "http://demo.guru99.com/test/newtours/";
+		CommonUI.openBrowser("chrome");
+		CommonUI.navigate(url);
+		initializeClassObj();
+		
+		
+		//homePageTestCaseOne();
+		// registerTestCaseTwo();
+		flightsTestCaseThree();
 
-		CommonUI commonUIObj = new CommonUI();
-		ObjInitialize obj = new ObjInitialize();
-		NewtourTest testObj = new NewtourTest();
-
-		commonUIObj.openBrowser("chrome");
-		commonUIObj.navigate(url);
-
-		obj.initializeClassObj();
-		testObj.homePageTestCaseOne();
-		// testObj.registerTestCaseTwo();
-		//testObj.flightsTestCaseThree();
-
-		commonUIObj.quitBrowser();
+		CommonUI.quitBrowser();
 
 	}
 
-	public void homePageTestCaseOne() {
+	public static void homePageTestCaseOne() {
 
 		homeObj.clickSignOn();
 		signOnObj.enterUserName("tutorial");
@@ -36,7 +32,7 @@ public class NewtourTest extends ObjInitialize {
 
 	}
 
-	public void registerTestCaseTwo() {
+	public static void registerTestCaseTwo() {
 
 		homeObj.clickRegister();
 		registerObj.enterFirstName("Jane");
@@ -47,7 +43,7 @@ public class NewtourTest extends ObjInitialize {
 		registerObj.enterCity("Haymarket");
 		registerObj.enterState("VA");
 		registerObj.enterZipCode("22456");
-		registerObj.selectCountry( "El Salvador");
+		registerObj.selectCountry("text","EL SALVADOR");
 		registerObj.enterUserName("janeDoe@gmail.com");
 		registerObj.enterPassword("password123");
 		registerObj.enterConfirmPassword("password123");
@@ -56,19 +52,19 @@ public class NewtourTest extends ObjInitialize {
 
 	}
 	
-	public void flightsTestCaseThree() {
+	public static void flightsTestCaseThree() {
 		
 		homeObj.clickFlights();
 		flightsObj.clickOneWayRadioButton();
-		flightsObj.selectPassengerDropDown("3");
-		flightsObj.selectArrivingInDropDown("New York");
-		flightsObj.selectMonthArriving("January");
-		flightsObj.selectDayArriving("5");
-		flightsObj.selectReturnInDropDown("London");
-		flightsObj.selectMonthReturn("January");
-		flightsObj.selectDayReturn("31");
+		flightsObj.selectPassengerDropDown("value", "3");
+		flightsObj.selectArrivingInDropDown("value","New York");
+		flightsObj.selectMonthArriving("value","1");
+		flightsObj.selectDayArriving("value","5");
+		flightsObj.selectReturnInDropDown("value","London");
+		flightsObj.selectMonthReturn("value","1");
+		flightsObj.selectDayReturn("value", "31");
 		flightsObj.selectFirstClass();
-		flightsObj.selectAirLine("Unified Airline");
+		flightsObj.selectAirLine("text","Unified Airlines");
 		flightsObj.clickContinue();
 		flightsObj.flightFinderMessage();
 	}

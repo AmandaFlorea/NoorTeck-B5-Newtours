@@ -36,7 +36,7 @@ public class RegisterPageTest extends CommonUI{
 		registerObj.enterCity("Haymarket");
 		registerObj.enterState("VA");
 		registerObj.enterZipCode("22456");
-		registerObj.selectCountry("El Salvador");
+		registerObj.selectCountry("text","El Salvador");
 		registerObj.enterUserName("janeDoe@gmail.com");
 		registerObj.enterPassword("password123");
 		registerObj.enterConfirmPassword("password123");

@@ -8,7 +8,7 @@ import com.noorteck.qa.pages.SignOnPage;
 public class ObjInitialize extends Constants {
 
 	// initialize each page class objects here..
-	public void initializeClassObj() {
+	public static void initializeClassObj() {
 		homeObj = new HomePage();
 		signOnObj = new SignOnPage();
 		registerObj = new RegisterPage();

@@ -26,16 +26,16 @@ public class FlightsPage extends CommonUI{
 	@FindBy(xpath = "//*[@name = 'fromMonth']")
 	WebElement onMonthDropDown;
 	
-	@FindBy(xpath = "//*[@name= 'fromDay'")
+	@FindBy(xpath = "//*[@name= 'fromDay']")
 	WebElement  onDayDropDown; 
 	
 	@FindBy(xpath = "//*[@name = 'toPort']")
 	WebElement returnInDropDown;
 	
-	@FindBy(xpath = "//*[@name = 'toMonth'")
+	@FindBy(xpath = "//*[@name = 'toMonth']")
 	WebElement returnMonthDropDown; 
 	
-	@FindBy (xpath = "//*[@name = 'toDay'")
+	@FindBy (xpath = "//*[@name = 'toDay']")
 	WebElement returnDayDropDown; 
 	
 	@FindBy(xpath = "//*[@value='Coach']")
@@ -53,7 +53,7 @@ public class FlightsPage extends CommonUI{
 	@FindBy(xpath = "//*[@name='findFlights'] ")
 	WebElement continueButton;
 	
-	@FindBy(linkText = "        After flight finder - No Seats Avaialble  ")
+	@FindBy(xpath = "/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr[1]/td[2]/table/tbody/tr[1]/td/p/font/b/font[1]")
 	WebElement flightFinderMessage; 
 	
 	
@@ -73,47 +73,47 @@ public class FlightsPage extends CommonUI{
 		
 	}
 	
-	public void selectPassengerDropDown(String numPassenger) {
-		selectFromDropdown(passengersDropDown, "value", numPassenger);
+	public void selectPassengerDropDown(String methodName, String indexTextValue) {
+		selectFromDropdown(passengersDropDown, methodName, indexTextValue);
 		
 	}
 
-	public void selectArrivingInDropDown(String arrivingDes) {
-		selectFromDropdown(arrivingInDropDown, "text", "arrivingDes");
+	public void selectArrivingInDropDown(String methodName, String indexTextValue) {
+		selectFromDropdown(arrivingInDropDown, methodName, indexTextValue);
 	}
 	
-	public void selectMonthArriving(String arriveMonth) {
-		selectFromDropdown(onMonthDropDown, "value", arriveMonth);
+	public void selectMonthArriving(String methodName, String indexTextValue) {
+		selectFromDropdown(onMonthDropDown, methodName, indexTextValue );
 	}
 	
-	public void selectDayArriving(String arriveDay) {
-		selectFromDropdown(onDayDropDown, "value", arriveDay);
+	public void selectDayArriving(String methodName, String indexTextValue) {
+		selectFromDropdown(onDayDropDown, methodName, indexTextValue);
 	}
 	
-	public void selectReturnInDropDown(String returnDes) {
-		selectFromDropdown(returnInDropDown, "text", returnDes);
+	public void selectReturnInDropDown(String methodName, String indexTextValue) {
+		selectFromDropdown(returnInDropDown, methodName, indexTextValue);
 	}
 	
-	public void selectMonthReturn(String returnMonth) {
-		selectFromDropdown(returnMonthDropDown, "value", returnMonth);
+	public void selectMonthReturn(String methodName, String indexTextValue) {
+		selectFromDropdown(returnMonthDropDown, methodName, indexTextValue);
 	}
 	
-	public void selectDayReturn(String returnDay) {
-		selectFromDropdown(returnDayDropDown, "value", returnDay);
+	public void selectDayReturn(String methodName, String indexTextValue) {
+		selectFromDropdown(returnDayDropDown, methodName, indexTextValue);
 	}
 	
 	public void selectFirstClass() {
 		click(firstClassRadio);
 	}
-	public void selectAirLine(String airLine) {
-		selectFromDropdown(AirlineDropDown, "text", airLine);
+	public void selectAirLine(String methodName, String indexTextValue) {
+		selectFromDropdown(AirlineDropDown,methodName, indexTextValue);
 	}
 	public void clickContinue() {
 		click(continueButton);
 	}
 	
 	public void flightFinderMessage() {
-		isDisplayed(flightFinderMessage);
+		getText(flightFinderMessage);
 	}
 	
 

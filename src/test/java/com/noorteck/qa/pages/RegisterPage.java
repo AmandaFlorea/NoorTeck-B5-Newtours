@@ -90,8 +90,8 @@ public class RegisterPage extends CommonUI {
 		enter(postalCodeField, zipcode);
 	}
 	
-	public void selectCountry(String country) {
-		selectFromDropdown(countryDropDown, "text",country);
+	public void selectCountry(String methodName, String indexTextValue ) {
+		selectFromDropdown(countryDropDown, methodName, indexTextValue);
 		
 	}
 	
@@ -112,7 +112,7 @@ public class RegisterPage extends CommonUI {
 	}
 	
 	public void verifyRegister() {
-		isDisplayed(registerThankYouMessage);
+		getText(registerThankYouMessage);
 	}
 	
 
